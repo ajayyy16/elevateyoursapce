@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homepage - Elevate Your Space</title>
+  <link rel="stylesheet" href="../style/global.css">
+  <link rel="stylesheet" href="../style/homepage.css">
+  <link rel="stylesheet" href="../style/navbar.css">  
+  <link rel="stylesheet" href="../style/footer.css"> 
+  <link rel="stylesheet" href="../style/section.css">
+  <link rel="stylesheet" href="../homepage/homepage.js">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <nav class="navbar">
+        <div class="navbar-logo">
+          <a href="../homepage/homepage.html">Elevate Your Space</a>
+        </div>
+        <div class="navbar-search">
+            <input type="text" placeholder="What are you looking for?" />
+            <button type="submit">Search</button>
+        </div>
+        <button class="product-button" onclick="checkProduct()">
+          <svg 
+              focusable="false"
+              width="30"
+              height="24"
+              fill="black"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 700 500"> 
+              <path 
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z">
+              </path>
+          </svg>
+      </button>
+      <div id="product-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title">Product Details</h2>
+            <p id="modal-description">Details about the product will be displayed here.</p>
+        </div>
+    </div>
+        <ul class="navbar-links">
+          <li><a href="../homepage/login.html">Login</a></li>
+          <li><a href="../homepage/homepage.html">Home</a></li>
+          <li><a href="../about/about.html">About Us</a></li>
+          <li><a href="../homepage/shop.html">Shop</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <div class="hamburger-menu" onclick="toggleSidebar()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+      <div class="sidebar" id="sidebar">
+  <button class="close-btn" onclick="toggleSidebar()"></button>
+  <ul>
+    <li><a href="../homepage/login.html">Login</a></li>
+    <li><a href="../homepage/homepage.html">Home</a></li>
+    <li><a href="../about/about.html">About Us</a></li>
+    <li><a href="../homepage/shop.html">Shop</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+  </ul>
+</div>
+    
+  </header>
+
+    <section class="hero-section">
+      <h1>Welcome to Elevate Your Space</h1>
+      <p>Discover the perfect pieces to transform your home.</p>
+      <button onclick="window.location.href='../shop.html'">Browse Products</button>
+    </section>
+
+    <section id="products">
+        <h2>Featured Products</h2>
+        <div class="product-slider">
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="https://media.istockphoto.com/id/179232860/photo/hotel-in-historic-building.jpg?s=612x612&w=0&k=20&c=OsOYCkJRz-9ppMKkR8yp23w_c4Q35n--mXq3PAI18Kw=" alt="Modern Sofa">
+                    <h3>Modern Sofa</h3>
+                    <p>Rs 4,999</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://media.istockphoto.com/id/1308181487/photo/table-setting-at-a-restaurant.jpg?s=612x612&w=0&k=20&c=kjAZiN_RmzNiwlr0jW-4TL6i4yEyt3TXIkrEIfFDd6I=" alt="Wooden Dining Table">
+                    <h3>Wooden Dining Table</h3>
+                    <p>Rs 9,999</p>
+                    <button class="add-to-cart" data-product-id="1">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src= "https://media.istockphoto.com/id/1218827475/photo/an-elegant-chair-in-a-stately-home-living-room.jpg?s=612x612&w=0&k=20&c=btSg81u8zToTEMtVC8FJupI6IRGcxSj1SD5rIeymiis="alt="Leather Armchair">
+                    <h3>Leather Armchair</h3>
+                    <p>Rs 20,000</p>
+                    <button class="add-to-cart" data-product-id="1">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://media.istockphoto.com/id/1333162123/photo/stylish-composition-of-modern-living-room-interior-in-small-apartment-eucalyptus-sofa-wooden.jpg?s=612x612&w=0&k=20&c=lfrheGCLobbeLnuIArjVtcRRD2RD-19H_Lc-UNKKVhk=" alt="Modern Coffee Table">
+                    <h3>Modern Coffee Table</h3>
+                    <p>Rs 1,500</p>
+                    <button class="add-to-cart" data-product-id="1">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://media.istockphoto.com/id/1474851298/photo/walk-in-closet-shelves-chest-of-drawers-in-modern-minimalist-white-style-in-staging-model.jpg?s=612x612&w=0&k=20&c=UpcoWEk0WLyAA8XYdFwbCN4CTpjvAma-NaXFI34y5No=" alt="Wardrobe">
+                    <h3>Wardrobe</h3>
+                    <p>Rs 16,999</p>
+                    <button class="add-to-cart" data-product-id="1">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://imgs.search.brave.com/3_rgrdoyGRA-yQbLIw3iJUCq-GfCHPF2MmuYHBMcyBo/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2M4LzFm/LzljL2M4MWY5YzZh/MzFlMWE0NTZiZWE5/MjFhNDVjMzA5OTYz/LmpwZw" alt="TV Unit">
+                    <h3>TV Unit</h3>
+                    <p>Rs 12,999</p>
+                    <button class="add-to-cart" data-product-id="1">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <section class="bestseller-section">
+      <h2>Bestseller Products</h2>
+      <div class="bestseller-row">
+        <div class="bestseller-product">
+          <img src="https://media.istockphoto.com/id/1190440285/photo/eclectic-living-room-interior-with-comfortable-velvet-corner-sofa-with-pillows.jpg?s=612x612&w=0&k=20&c=T87OfLSfrChREiVaDLJA4LIM2qvrc7UaosmxH75RY98=" alt="Bestseller Product" />
+          <div class="bestseller-details">
+            <h3>Luxury Velvet Sofa</h3>
+            <p>Experience ultimate comfort with our premium velvet sofa. Perfect for modern living spaces.</p>
+            <span class="bestseller-price">Rs 25,000</span>
+            <button class="bestseller-add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+        <div class="bestseller-product">
+          <img src="https://media.istockphoto.com/id/1009381622/photo/stylish-light-gray-handles-on-cabinets-close-up-kitchen-interior-with-modern-furniture-and.jpg?s=612x612&w=0&k=20&c=4NQ3m2g95BvLVTAOSutoVnkq3xtvkHuSTzP45ICDXMY=" alt="Bestseller Product" />
+          <div class="bestseller-details">
+            <h3>Kitchen Cabinet</h3>
+            <p>A cupboard with drawers and shelves for use in a kitchen</p>
+            <span class="bestseller-price">Rs 49,000</span>
+            <button class="bestseller-add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+        <div class="bestseller-product">
+          <img src="https://media.istockphoto.com/id/1217867447/photo/lamps-over-the-table.jpg?s=612x612&w=0&k=20&c=V1xWg4tARyzObdzlrKnGjxeC7yXySDXIMLlF_8iUzBI=" alt="Bestseller Product" />
+          <div class="bestseller-details">
+            <h3>Table Lamp</h3>
+            <p>A a small electric light designed to stand on a table or any piece of furniture</p>
+            <span class="bestseller-price">Rs 10,000</span>
+            <button class="bestseller-add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="image-gallery">
+      <h2>Idea & Inspiration</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="https://images.pexels.com/photos/1090638/pexels-photo-1090638.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Item 1">
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.pexels.com/photos/1543447/pexels-photo-1543447.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Item 2">
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.pexels.com/photos/3767442/pexels-photo-3767442.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Item 3">
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.pexels.com/photos/462235/pexels-photo-462235.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Item 4">
+        </div>
+        <div class="gallery-item">
+          <img src="https://img.freepik.com/free-photo/decorative-pom-poms-used-decorative-vase_23-2149449983.jpg?ga=GA1.1.1234046264.1736790752&semt=ais_hybrid" alt="Item 5">
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.pexels.com/photos/3797991/pexels-photo-3797991.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Item 6">
+        </div>
+      </div>
+    </section>
+
+    <section class="services-section">
+      <h2>Our Services</h2>
+      <div class="services-container">
+        <!-- Left Section -->
+        <div class="services-discover">
+          <h2>Discover all the services</h2>
+          <div class="discover-arrow">
+            <span>&rarr;</span>
+          </div>
+        </div>
+    
+        <!-- Right Section: Service Cards -->
+        <div class="services-cards">
+          <div class="service-card">
+            <img src="https://www.ikea.com/images/11/13/111321124743e2b0d6adbc6c306df96a.png?f=s" alt="Service 1 Icon">
+            <p>Post Office Collection Point</p>
+          </div>
+          <div class="service-card">
+            <img src="https://www.ikea.com/images/clicca-e-ritira-a46e5addce741cf77f2666dc277e267f.png?f=s" alt="Service 2 Icon">
+            <p>Click & Collect for Rs.499</p>
+          </div>
+          <div class="service-card">
+            <img src="https://www.ikea.com/images/progetta-con-noi-in-videoconferenza-6e8476be4c3f85e2b623dfd7e0cbb66c.png?f=s" alt="Service 3 Icon">
+            <p>Design Service</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    
+    <footer class="footer">
+        <div class="footer-container">
+          <!-- About Section -->
+          <div class="footer-about">
+            <h3>Elevate Your Space</h3>
+            <p>Your one-stop destination for premium home decor and furniture.<br> 
+                Transform your living spaces with elegance and style.
+            </p>
+          </div>
+      
+          <!-- Contact Section -->
+          <div class="footer-contact">
+            <h4>Contact Us</h4>
+            <ul>
+              <li>Email: support@elevateyourspace.com</li><br>
+              <li>Phone: NA</li><br>
+              <li>Address: NA</li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="footer-bottom">
+          <p>&copy; 2025 Elevate Your Space. All rights reserved.</p>
+          <ul class="footer-socials">
+            <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+            <li><a href="#"><i class="fab fa-pinterest"></i> Pinterest</a></li>
+          </ul>
+        </div>
+      </footer>
+      
+  </div>
+</body>
+</html>
